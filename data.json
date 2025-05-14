@@ -1,0 +1,59 @@
+[
+    {
+      "id": 1,
+      "neighborhood": "Nyali",
+      "price": 8000,
+      "type": "bedsitter",
+      "availability": "2025-05-01",
+      "landmarks": ["City Mall", "Nyali Beach"],
+      "rules": ["No pets", "No smoking"],
+      "image": "https://via.placeholder.com/300/008000/FFFFFF?Text=Bedsitter",
+      "verified": true
+    },
+    {
+      "id": 2,
+      "neighborhood": "Kisauni",
+      "price": 4500,
+      "type": "shared",
+      "availability": "2025-04-15",
+      "landmarks": ["Moi International Airport"],
+      "rules": ["Respectful co-living"],
+      "image": "https://via.placeholder.com/300/FFA500/FFFFFF?Text=Shared+Room",
+      "verified": false
+    },
+    {
+      "id": 3,
+      "neighborhood": "Mtwapa",
+      "price": 12000,
+      "type": "one-bedroom",
+      "availability": "2025-05-10",
+      "landmarks": ["Jomo Kenyatta Public Beach"],
+      "rules": ["Quiet hours after 10 PM"],
+      "image": "https://via.placeholder.com/300/800080/FFFFFF?Text=One+Bedroom",
+      "verified": true,
+      "ecoCertified": true
+    },
+    {
+      "id": 4,
+      "neighborhood": "Bamburi",
+      "price": 6000,
+      "type": "bedsitter",
+      "availability": "2025-04-25",
+      "landmarks": ["Bamburi Cement"],
+      "rules": [],
+      "image": "https://via.placeholder.com/300/0000FF/FFFFFF?Text=Bedsitter",
+      "verified": false
+    },
+    {
+      "id": 5,
+      "neighborhood": "Nyali",
+      "price": 15000,
+      "type": "one-bedroom",
+      "availability": "2025-06-01",
+      "landmarks": ["Wild Waters Kenya"],
+      "rules": ["No parties"],
+      "image": "https://via.placeholder.com/300/008080/FFFFFF?Text=One+Bedroom",
+      "verified": true,
+      "ecoCertified": true
+    }
+  ]

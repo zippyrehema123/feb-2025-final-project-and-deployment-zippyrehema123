@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community - Mombasa Transition Housing Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .primary-blue {
+            background-color: #3B82F6;
+        }
+        .primary-blue:hover {
+            background-color: #2c69d1;
+        }
+        .secondary-blue {
+            background-color: #60a5fa;
+            color: #1e3a8a;
+        }
+        .secondary-blue:hover {
+            background-color: #4381dc;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <header class="bg-gradient-to-r from-blue-600 to-blue-400 text-white py-6 shadow-lg">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+                        
+            <!-- Logo and Title -->
+                <div>
+                    <a href="index.html" class="flex items-center">
+                        <img src="images/logo.png" alt="Mombasa Housing Hub Logo" class="h-10 w-auto mr-3">
+                        <h1 class="text-3xl md:text-4xl font-bold tracking-tight">Mombasa Housing Hub</h1>
+                    </a>
+                </div>
+            
+            
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="index.html" class="hover:text-indigo-200"><i class="fas fa-home mr-1"></i> Home</a></li>
+                    <li><a href="listings.html" class="hover:text-indigo-200"><i class="fas fa-list mr-1"></i> Housing</a></li>
+                    <li><a href="ecoliving.html" class="hover:text-indigo-200"><i class="fas fa-leaf mr-1"></i> Eco-Living</a></li>
+                    <li><a href="community.html" class="hover:text-indigo-200"><i class="fas fa-comments mr-1"></i> Community</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="container mx-auto py-8 px-4">
+        <section class="mb-12">
+            <h2 class="text-2xl font-semibold mb-6 text-blue-700"><i class="fas fa-bullhorn mr-2"></i> Share Your Voice</h2>
+            <p class="mb-4 text-gray-700">Connect with fellow newcomers and long-term residents. Share your housing experiences and help build a supportive community.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg mb-4 text-blue-600"><i class="fas fa-star-half-alt mr-2"></i> Leave a Housing Review</h3>
+                    <form>
+                        <div class="mb-4">
+                            <label for="housingId" class="block text-gray-700 text-sm font-bold mb-2">Housing (e.g., "Bedsitter near City Mall"):</label>
+                            <input type="text" id="housingId" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter housing description">
+                        </div>
+                        <div class="mb-4">
+                            <label for="rating" class="block text-gray-700 text-sm font-bold mb-2">Rating (1-5):</label>
+                            <input type="number" id="rating" min="1" max="5" class="shadow appearance-none border rounded w-1/4 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        </div>
+                        <div class="mb-4">
+                            <label for="reviewText" class="block text-gray-700 text-sm font-bold mb-2">Your Review:</label>
+                            <textarea id="reviewText" rows="4" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+                        </div>
+                        <button class="primary-blue text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"><i class="fas fa-paper-plane mr-2"></i> Submit Review</button>
+                    </form>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-semibold text-lg mb-4 text-red-600"><i class="fas fa-exclamation-triangle mr-2"></i> Report an Issue</h3>
+                    <form>
+                        <div class="mb-4">
+                            <label for="location" class="block text-gray-700 text-sm font-bold mb-2">Location:</label>
+                            <input type="text" id="location" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter specific location">
+                        </div>
+                        <div class="mb-4">
+                            <label for="problemType" class="block text-gray-700 text-sm font-bold mb-2">Type of Problem:</label>
+                            <select id="problemType" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                                <option value="">Select Problem Type</option>
+                                <option value="trash"><i class="fas fa-trash mr-1"></i> Trash Pile-Up</option>
+                                <option value="safety"><i class="fas fa-shield-alt mr-1"></i> Unsafe Building Condition</option>
+                                <option value="noise"><i class="fas fa-volume-up mr-1"></i> Noise Complaint</option>
+                                <option value="other"><i class="fas fa-question-circle mr-1"></i> Other</option>
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <label for="description" class="block text-gray-700 text-sm font-bold mb-2">Description:</label>
+                            <textarea id="description" rows="4" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+                        </div>
+                        <button class="primary-blue text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"><i class="fas fa-flag mr-2"></i> Submit Report</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-12 bg-white rounded-lg shadow-md p-6">
+            <h2 class="text-2xl font-semibold mb-6 text-green-700"><i class="fas fa-lightbulb mr-2"></i> Sustainable Living Hacks</h2>
+            <p class="mb-4 text-gray-700">Share your eco-friendly tips and discover how others are living sustainably in Mombasa.</p>
+
+            <div id="hacks-container">
+                <div class="mb-6 p-4 border rounded-md bg-gray-50">
+                    <p class="font-semibold text-gray-800">Local Tip: Use reusable bags at the market!</p>
+                    <p class="text-gray-600 text-sm">Shared by Aisha on April 10, 2025</p>
+                    <button class="secondary-blue font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline text-sm mt-2"><i class="fas fa-thumbs-up mr-1"></i> 5 Likes</button>
+                </div>
+                <div class="mb-6 p-4 border rounded-md bg-gray-50">
+                    <p class="font-semibold text-gray-800">DIY Idea: Turn old t-shirts into cleaning cloths.</p>
+                    <p class="text-gray-600 text-sm">Shared by Juma on April 9, 2025</p>
+                    <button class="secondary-blue font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline text-sm mt-2"><i class="fas fa-thumbs-up mr-1"></i> 12 Likes</button>
+                </div>
+                </div>
+
+            <button class="primary-blue text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4"><i class="fas fa-eye mr-2"></i> View More Hacks</button>
+            <button class="primary-blue text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4 ml-2"><i class="fas fa-plus mr-2"></i> Share Your Hack</button>
+        </section>
+
+        <section class="bg-white rounded-lg shadow-md p-6">
+            <h2 class="text-2xl font-semibold mb-6 text-blue-700"><i class="fas fa-question-circle mr-2"></i> Newcomer Q&A</h2>
+            <p class="mb-4 text-gray-700">Got questions about settling in? Ask our AI assistant or the community!</p>
+            <div class="mb-4 flex space-x-2">
+                <input id="chatInput" type="text" placeholder="Ask about housing, eco-living, or Mombasa..." class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+                <button id="chatSubmit" class="primary-blue text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"><i class="fas fa-paper-plane mr-2"></i> Ask AI</button>
+            </div>
+            <div id="chatResponse" class="bg-gray-50 p-4 rounded-md hidden"></div>
+            <div id="qna-container">
+                <div class="mb-4 p-3 border rounded-md bg-blue-50">
+                    <p class="font-semibold text-blue-800">Where can I find affordable transport?</p>
+                    <p class="text-gray-600 text-sm">Asked by Sarah on April 11, 2025</p>
+                    <button class="secondary-blue font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline text-sm mt-2"><i class="fas fa-reply mr-1"></i> 3 Replies</button>
+                </div>
+            </div>
+            <div class="mt-4 flex space-x-2">
+                <button class="primary-blue text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"><i class="fas fa-list-ul mr-2"></i> View All Q&A</button>
+                <button class="primary-blue text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"><i class="fas fa-question mr-2"></i> Ask a Question</button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-300 py-4 text-center text-gray-700 mt-8">
+        <p>&copy; 2025 Mombasa Transition Housing Hub</p>
+    </footer>
+<script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const chatInput = document.getElementById('chatInput');
+        const chatSubmit = document.getElementById('chatSubmit');
+        const chatResponse = document.getElementById('chatResponse');
+    
+        chatSubmit.addEventListener('click', async () => {
+            const message = chatInput.value.trim();
+            if (!message) {
+                chatResponse.classList.remove('hidden');
+                chatResponse.innerHTML = '<p class="text-red-600">Please enter a question.</p>';
+                return;
+            }
+    
+            chatResponse.classList.remove('hidden');
+            chatResponse.innerHTML = '<p class="text-gray-600">Loading...</p>';
+    
+            try {
+                const response = await fetch('http://127.0.0.1:5000/api/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message })
+                });
+    
+                const data = await response.json();
+                if (!data.success) {
+                    throw new Error(data.error || 'Unknown error');
+                }
+    
+                chatResponse.innerHTML = `<p class="text-gray-800">${data.reply}</p>`;
+            } catch (error) {
+                chatResponse.innerHTML = `<p class="text-red-600">Error: ${error.message}. Try again later.</p>`;
+            }
+    
+            chatInput.value = '';
+        });
+    
+        // Preserve existing handlers
+        const reviewForm = document.querySelector('section:nth-of-type(1) form');
+        if (reviewForm) {
+            reviewForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+                alert('Review submitted (functionality not yet implemented)');
+            });
+        }
+    
+        const reportForm = document.querySelector('section:nth-of-type(2) form');
+        if (reportForm) {
+            reportForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+                alert('Problem reported (functionality not yet implemented)');
+            });
+        }
+    
+        const shareHackButton = document.querySelector('section:nth-of-type(3) button:last-child');
+        if (shareHackButton) {
+            shareHackButton.addEventListener('click', () => {
+                alert('Share your hack (functionality not yet implemented)');
+            });
+        }
+    
+        const askQuestionButton = document.querySelector('section:nth-of-type(4) button:last-child');
+        if (askQuestionButton) {
+            askQuestionButton.addEventListener('click', () => {
+                alert('Ask a question (functionality not yet implemented)');
+            });
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Listings- Mombasa Transition Housing Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .primary-blue {
+            background-color: #3B82F6;
+        }
+        .primary-blue:hover {
+            background-color: #2c69d1;
+        }
+        .secondary-blue {
+            background-color: #60a5fa;
+            color: #1e3a8a;
+        }
+        .secondary-blue:hover {
+            background-color: #4381dc;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <header class="bg-gradient-to-r from-blue-600 to-blue-400 text-white py-6 shadow-lg">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+                        
+            <!-- Logo and Title -->
+                <div>
+                    <a href="index.html" class="flex items-center">
+                        <img src="images/logo.png" alt="Mombasa Housing Hub Logo" class="h-10 w-auto mr-3">
+                        <h1 class="text-3xl md:text-4xl font-bold tracking-tight">Mombasa Housing Hub</h1>
+                    </a>
+                </div>
+            
+            
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="index.html" class="hover:text-indigo-200"><i class="fas fa-home mr-1"></i> Home</a></li>
+                    <li><a href="listings.html" class="hover:text-indigo-200"><i class="fas fa-list mr-1"></i> Housing</a></li>
+                    <li><a href="ecoliving.html" class="hover:text-indigo-200"><i class="fas fa-leaf mr-1"></i> Eco-Living</a></li>
+                    <li><a href="community.html" class="hover:text-indigo-200"><i class="fas fa-comments mr-1"></i> Community</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <style>
+        body {
+            background-image: url('images/background.jpg'); /* Replace with your image path */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed; /* Optional: keeps background fixed while scrolling */
+            position: relative; /* Needed for overlay */
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(214, 208, 208, 0.7); /* Black with 50% opacity */
+            z-index: -1; /* Place overlay behind content */
+        }
+    </style>
+
+</head>
+<body class="bg-gray-100 font-sans">
+    <main class="container mx-auto py-8 px-4">
+        <section class="mb-8">
+            <h2 class="text-xl font-semibold mb-4">Available Housing</h2>
+            <p>Browse our current listings of affordable short-term housing options in Mombasa.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+
+                <div class="modal-body">
+                    <div class="bg-white rounded-lg shadow-md p-4">
+                        <h3 class="font-semibold text-lg mb-2">Bedsitter in Nyali</h3>
+                        <img src="images/bedsitter.jpg" alt="Shared Room in Kisauni" class="rounded mb-2">
+                        <p class="text-gray-700 mb-1">Price: Ksh 7,000/month</p>
+                        <p class="text-gray-700 mb-1">Availability: Immediate</p>
+                        <p class="text-gray-700"><span class="font-bold">Neighborhood:</span> Nyali</p>
+                        <button data-modal-id="modal-1" class="openModal inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2">View Details</button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-4">
+                    <h3 class="font-semibold text-lg mb-2">Shared Room in Kisauni</h3>
+                    <img src="images/2br.jpeg" alt="Shared Room in Kisauni" class="rounded mb-2">
+                    <p class="text-gray-700 mb-1">Price: Ksh 3,500/month</p>
+                    <p class="text-gray-700 mb-1">Availability: Immediate</p>
+                    <p class="text-gray-700"><span class="font-bold">Neighborhood:</span> Kisauni</p>
+                    <button data-modal-id="modal-2" class="openModal inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2">View Details</button>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-4">
+                    <h3 class="font-semibold text-lg mb-2">One bedroom in Bamburi</h3>
+                    <img src="images/1br.jpg" alt="One bedroom in Bamburi" class="rounded mb-2">
+                    <p class="text-gray-700 mb-1">Price: Ksh 9,000/month</p>
+                    <p class="text-gray-700 mb-1">Availability: Immediate</p>
+                    <p class="text-gray-700"><span class="font-bold">Neighborhood:</span> Bamburi</p>
+                    <button data-modal-id="modal-3" class="openModal inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2">View Details</button>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-300 py-4 text-center text-gray-700 mt-8">
+        <p>&copy; 2025 Mombasa Transition Housing Hub</p>
+    </footer>
+
+    <div id="modal-1" class="modal fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center">
+        <div class="bg-white rounded-lg p-6 relative">
+            <button class="closeModal absolute top-2 right-2 text-gray-600 hover:text-gray-800">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <h3 class="font-semibold text-lg mb-2">Bedsitter in Nyali</h3>
+            <img src="images/bedsitter.jpg" alt="Bedsitter in Nyali" class="rounded mb-2">
+            <p class="text-gray-700 mb-1">Price: Ksh 7,000/month</p>
+            <p class="text-gray-700 mb-1">Availability: Immediate</p>
+            <p class="text-gray-700"><span class="font-bold">Neighborhood:</span> Nyali</p>
+            <br>
+           <p class="text-gray-700 mb-1">Amenities:</p>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+            <i class="fas fa-tint"> Adequate water</i>
+            <i class="fas fa-wifi"> Wi-Fi provider</i>
+            <i class="fas fa-utensils"> Kitchenette</i>
+            <i class="fas fa-bath"> Private bathroom</i>
+            <i class="fas fa-parking"> Available Parking</i>
+            <i class="fas fa-trash"> Weekly garbage collection</i>
+       </div>
+    </div>
+
+    <div id="modal-2" class="modal fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center">
+        <div class="bg-white rounded-lg p-6 relative">
+            <button class="closeModal absolute top-2 right-2 text-gray-600 hover:text-gray-800">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <h3 class="font-semibold text-lg mb-2">Shared Room in Kisauni</h3>
+            <img src="images/2br.jpeg" alt="Shared Room in Kisauni" class="rounded mb-2">
+            <p class="text-gray-700 mb-1">Price: Ksh 3,500/month</p>
+            <p class="text-gray-700 mb-1">Availability: Immediate</p>
+            <p class="text-gray-700"><span class="font-bold">Neighborhood:</span> Kisauni</p>
+            <br>
+           <p class="text-gray-700 mb-1">Amenities:</p>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+            <i class="fas fa-tint"> Adequate water</i>
+            <i class="fas fa-wifi"> Wi-Fi provider</i>
+            <i class="fas fa-utensils"> Kitchenette</i>
+            <i class="fas fa-bath"> Private bathroom</i>
+            <i class="fas fa-parking"> Available Parking</i>
+            <i class="fas fa-trash"> Weekly garbage collection</i>
+        </div>
+    </div>
+
+    <div id="modal-3" class="modal fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center">
+        <div class="bg-white rounded-lg p-6 relative">
+            <button class="closeModal absolute top-2 right-2 text-gray-600 hover:text-gray-800">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <h3 class="font-semibold text-lg mb-2">One bedroom in Bamburi</h3>
+            <img src="images/1br.jpg" alt="One bedroom in Bamburi" class="rounded mb-2">
+            <p class="text-gray-700 mb-1">Price: Ksh 9,000/month</p>
+            <p class="text-gray-700 mb-1">Availability: Immediate</p>
+            <p class="text-gray-700"><span class="font-bold">Neighborhood:</span> Bamburi</p>
+            <br>
+           <p class="text-gray-700 mb-1">Amenities:</p>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+            <i class="fas fa-tint"> Adequate water</i>
+            <i class="fas fa-wifi"> Wi-Fi provider</i>
+            <i class="fas fa-utensils"> Kitchenette</i>
+            <i class="fas fa-bath"> Private bathroom</i>
+            <i class="fas fa-parking"> Available Parking</i>
+            <i class="fas fa-trash"> Weekly garbage collection</i>
+        </div>
+    </div>
+
+    <script>
+        const openModalButtons = document.querySelectorAll('.openModal');
+        const closeModalButtons = document.querySelectorAll('.closeModal');
+        const modals = document.querySelectorAll('.modal');
+
+        openModalButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const modalId = button.dataset.modalId;
+                const modal = document.getElementById(modalId);
+                modal.classList.remove('hidden');
+            });
+        });
+
+        closeModalButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const modal = button.closest('.modal');
+                modal.classList.add('hidden');
+            });
+        });
+
+        window.addEventListener('click', (event) => {
+            modals.forEach(modal => {
+                if (event.target === modal) {
+                    modal.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

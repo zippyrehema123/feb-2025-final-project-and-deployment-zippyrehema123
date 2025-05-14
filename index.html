@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mombasa Transition Housing Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom Styles for Hero Section Background */
+        .hero-bg {
+    background-image: url('images/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: relative;
+    min-height: 80vh; /* Make it take up at least 80% of the screen height */
+    display: flex; /* Enable flexbox for centering content */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    padding-top: 0; /* Remove default top padding */
+    padding-bottom: 0; /* Remove default bottom padding */
+    margin-bottom: 0; /* Remove default bottom margin */
+    border-radius: 0; /* Make it go to the edges */
+    box-shadow: none; /* Remove the shadow if you don't want it full width */
+}
+
+.hero-bg .container {
+    width: 100%; /* Make the container inside take full width */
+    padding-left: 20px; /* Add some padding on the left */
+    padding-right: 20px; /* Add some padding on the right */
+    text-align: center; /* Keep the text centered */
+}
+        
+        /* Add animation classes */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .animate-fadeIn {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        
+        /* Custom fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        /* Hero wave decoration */
+        .wave-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+
+        .wave-bottom svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 46px;
+        }
+
+        .wave-bottom .shape-fill {
+            fill: #F3F4F6;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Enhanced Header with gradient -->
+    <header class="bg-gradient-to-r from-blue-600 to-blue-400 text-white py-6 shadow-lg">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+                        
+            <!-- Logo and Title -->
+                <div>
+                    <a href="index.html" class="flex items-center">
+                        <img src="images/logo.png" alt="Mombasa Housing Hub Logo" class="h-10 w-auto mr-3">
+                        <h1 class="text-3xl md:text-4xl font-bold tracking-tight">Mombasa Housing Hub</h1>
+                    </a>
+                </div>
+            
+            
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="index.html" class="hover:text-indigo-200"><i class="fas fa-home mr-1"></i> Home</a></li>
+                    <li><a href="listings.html" class="hover:text-indigo-200"><i class="fas fa-list mr-1"></i> Housing</a></li>
+                    <li><a href="ecoliving.html" class="hover:text-indigo-200"><i class="fas fa-leaf mr-1"></i> Eco-Living</a></li>
+                    <li><a href="community.html" class="hover:text-indigo-200"><i class="fas fa-comments mr-1"></i> Community</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto py-8 px-4">
+        <!-- Enhanced Hero Section with animation and decoration -->
+        <section class="hero-bg text-center text-white animate-fadeIn relative overflow-hidden">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 tracking-tight">A Warm Welcome to Mombasa City</h2>
+                <p class="text-xl mb-8 max-w-2xl mx-auto">Your Gateway to Comfortable Temporary Housing and Sustainable Living</p>
+                <a href="listings.html" class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">Find Your Housing</a>
+            </div>
+        
+            <div class="wave-bottom">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+                </svg>
+            </div>
+        </section>
+        
+        
+
+        <!-- Enhanced Pillars Section with background images -->
+<section class="mb-16">
+    <h2 class="text-3xl font-semibold mb-8 text-gray-800 text-center">Our Core Pillars</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="rounded-xl shadow-xl p-8 text-white transform transition-all duration-300 hover:scale-105 hover:shadow-2xl bg-blue-600 bg-blend-overlay bg-opacity-70 bg-cover bg-center" style="background-image: url('images/affordable.jpg');">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 mb-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.226-.227.596-.227.822 0l8.954 8.955c.226.227.226.597 0 .823L12 21.75l-8.955-8.954c-.227-.226-.227-.596 0-.822z" />
+            </svg>
+            <h3 class="font-semibold text-2xl mb-3">Affordable Housing</h3>
+            <p class="text-gray-100 text-lg mb-4">Discover a wide range of budget-friendly, short-term housing options across Mombasa's beautiful neighborhoods.</p>
+            <a href="listings.html" class="inline-block mt-2 text-blue-100 hover:text-white font-medium transition-colors duration-300">Explore Listings 
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 inline-block ml-1">
+                    <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H3.75A.75.75 0 013 10z" clip-rule="evenodd" />
+                    <path fill-rule="evenodd" d="M10 3a.75.75 0 01.75.75v10.5a.75.75 0 01-1.5 0V3.75A.75.75 0 0110 3z" clip-rule="evenodd" />
+                </svg>
+            </a>
+        </div>
+
+        <div class="rounded-xl shadow-xl p-8 text-white transform transition-all duration-300 hover:scale-105 hover:shadow-2xl bg-green-600 bg-blend-overlay bg-opacity-70 bg-cover bg-center" style="background-image: url('images/eco.jpeg');">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 mb-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h8.25A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75a2.25 2.25 0 002.25-2.25V5.25a2.25 2.25 0 00-2.25-2.25h-3a2.25 2.25 0 00-2.25 2.25v13.5a2.25 2.25 0 002.25 2.25h3z" />
+            </svg>
+            <h3 class="font-semibold text-2xl mb-3">Sustainable Living</h3>
+            <p class="text-gray-100 text-lg mb-4">Access resources, tips, and community initiatives to embrace an eco-friendly lifestyle in Mombasa's coastal environment.</p>
+            <a href="ecoliving.html" class="inline-block mt-2 text-green-100 hover:text-white font-medium transition-colors duration-300">Learn More 
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 inline-block ml-1">
+                    <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H3.75A.75.75 0 013 10z" clip-rule="evenodd" />
+                    <path fill-rule="evenodd" d="M10 3a.75.75 0 01.75.75v10.5a.75.75 0 01-1.5 0V3.75A.75.75 0 0110 3z" clip-rule="evenodd" />
+                </svg>
+            </a>
+        </div>
+
+        <div class="rounded-xl shadow-xl p-8 text-white transform transition-all duration-300 hover:scale-105 hover:shadow-2xl bg-indigo-600 bg-blend-overlay bg-opacity-70 bg-cover bg-center" style="background-image: url('images/comm.jpeg');">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 mb-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.306 3 12s4.03 8.25 9 8.25z" />
+            </svg>
+            <h3 class="font-semibold text-2xl mb-3">Community Connection</h3>
+            <p class="text-gray-100 text-lg mb-4">Connect with fellow newcomers and long-term residents, share experiences, and find support in our vibrant community.</p>
+            <a href="community.html" class="inline-block mt-2 text-indigo-100 hover:text-white font-medium transition-colors duration-300">Join the Community 
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 inline-block ml-1">
+                    <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H3.75A.75.75 0 013 10z" clip-rule="evenodd" />
+                    <path fill-rule="evenodd" d="M10 3a.75.75 0 01.75.75v10.5a.75.75 0 01-1.5 0V3.75A.75.75 0 0110 3z" clip-rule="evenodd" />
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+        <!-- Enhanced CTA Section -->
+        <section class="py-16 bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl shadow-lg">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl font-semibold text-gray-800 mb-6">Ready to Find Your New Home?</h2>
+                <p class="text-gray-700 mb-8 text-lg max-w-2xl mx-auto">Browse our updated listings and start your smooth transition to beautiful Mombasa today!</p>
+                <a href="listings.html" class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">View All Listings</a>
+            </div>
+        </section>
+        
+        <!-- Added testimonials section -->
+        <section class="py-12 mt-16">
+            <h2 class="text-3xl font-semibold mb-10 text-gray-800 text-center">What Our Residents Say</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
+                            AM
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-lg">Aisha Mohammed</h4>
+                            <p class="text-gray-600">Nyali Resident</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"The Housing Hub made my transition to Mombasa incredibly smooth. I found an affordable place in just days and connected with wonderful neighbors!"</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
+                            JO
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-lg">James Omondi</h4>
+                            <p class="text-gray-600">Bamburi Resident</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"Beyond just finding housing, the eco-living resources helped me adapt to sustainable practices perfect for coastal living. Truly a comprehensive resource."</p>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <footer class="bg-gray-300 py-4 text-center text-gray-700 mt-8">
+        <p>&copy; 2025 Mombasa Transition Housing Hub</p>
+    </footer>
+    
+
+</body>
+</html>

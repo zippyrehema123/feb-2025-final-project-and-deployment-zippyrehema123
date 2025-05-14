@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco-Living - Mombasa Transition Housing Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+          integrity="sha512-xodZBNTC5n17Xt2atTPvknHGJwWtJx79gg6IzLgaAvhPDG+LRkpOYJlIKzPVLuonz19nzgme3YcNGA5EETrPrw=="
+          crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+            integrity="sha512-XQoYMMLkQiMQHzIJEnwyolPvsdnoKGjIK5y72hovUkVzj/aPUWwxBnv1jh0/pBnGcZCTA+cEjhtyBFeVtWWcA=="
+            crossorigin=""></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        #recyclingMap { height: 300px; margin-top: 1rem; border-radius: 0.5rem; }
+        .before-after-container {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .before-after-container img {
+            max-width: 100%;
+            height: auto;
+        }
+        .tutorial-step {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.25rem;
+        }
+        .modal-lg {
+            max-width: 80%; /* Adjust as needed */
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="bg-gray-100 font-sans">
+    <header class="bg-gradient-to-r from-blue-600 to-blue-400 text-white py-6 shadow-lg">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+                        
+            <!-- Logo and Title -->
+                <div>
+                    <a href="index.html" class="flex items-center">
+                        <img src="images/logo.png" alt="Mombasa Housing Hub Logo" class="h-10 w-auto mr-3">
+                        <h1 class="text-3xl md:text-4xl font-bold tracking-tight">Mombasa Housing Hub</h1>
+                    </a>
+                </div>
+            
+            
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="index.html" class="hover:text-indigo-200"><i class="fas fa-home mr-1"></i> Home</a></li>
+                    <li><a href="listings.html" class="hover:text-indigo-200"><i class="fas fa-list mr-1"></i> Housing</a></li>
+                    <li><a href="ecoliving.html" class="hover:text-indigo-200"><i class="fas fa-leaf mr-1"></i> Eco-Living</a></li>
+                    <li><a href="community.html" class="hover:text-indigo-200"><i class="fas fa-comments mr-1"></i> Community</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+   
+    <main class="container mx-auto py-8 px-4">
+        <section class="mb-8">
+            <h2 class="text-xl font-semibold mb-4">Weekly Waste Sorting Tips</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-lg shadow-md p-4">
+                    <img class="img-fluid mb-4" src="images/plastic.jpg" alt=""width="">
+                    <h3 class="font-semibold mb-2">Plastic</h3>
+                    <p class="text-gray-700"> Thoroughly rinse and ensure plastic bottles and containers are fully dry to prevent contamination. Carefully examine items for recycling symbols . Actively reduce your plastic use by choosing reusable alternatives to minimize waste generation at the source.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-4">
+                    <img class="img-fluid mb-4" src="images/organicwaste.jpg" alt=""width="">
+                    <h3 class="font-semibold mb-2">Organic Waste</h3>
+                    <p class="text-gray-700"> Investigate home composting for food peels, coffee grounds, and garden trimmings to create valuable soil. Inquire with Mombasa authorities about designated organic waste collection programs, including accepted materials and proper sorting methods. Separating organics reduces landfill burden and potential methane emissions.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-4">
+                    <img class="img-fluid mb-4" src="images/e-waste.jpg" alt=""width="">
+                    <h3 class="font-semibold mb-2">E-waste</h3>
+                    <p class="text-gray-700"> Never discard old electronics with regular trash due to hazardous materials. Seek out specific e-waste collection centers or designated drop-off events in Mombasa. These ensure safe recycling and prevent environmental contamination. Remember to wipe personal data before disposal. </p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-4">
+                    <img class="img-fluid mb-4" src="images/cardboard.jpg" alt=""width="">
+                    <h3 class="font-semibold mb-2">Paper & Cardboard</h3>
+                    <p class="text-gray-700">Ensure all paper and cardboard are free from food stains and moisture to maintain recyclability. Flatten cardboard boxes to conserve space in collection bins and during transport. Clean, dry, and flattened paper maximizes recycling efficiency in Mombasa's waste management system.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-8">
+            <h2 class="text-xl font-semibold mb-4">Recycling & Compost Drop-off Points</h2>
+            <p class="mb-4">Find nearby recycling centers and compost drop-off locations on the map below.</p>
+            <div id="recyclingMap"> <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d63677.44693783036!2d39.631486718996804!3d-4.052946814825564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s%20recycling%20centers%20mombasa!5e0!3m2!1sen!2ske!4v1744382283053!5m2!1sen!2ske" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        </section>
+
+
+        <br><br>
+        <section class="mb-8">
+            <h2 class="text-xl font-semibold mb-4">Upcycling Ideas & Tutorials</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <div class="rounded-lg shadow-md p-4" style="background-color:#599DF8;">
+                    <h3 class="font-semibold mb-2">DIY Pallet Furniture</h3>
+                    <p class="text-gray-700">
+                        Learn how to create unique furniture pieces from old wooden pallets.
+                        <button type="button" class="text-white-500 hover:underline" data-toggle="modal" data-target="#palletFurnitureModal" style="color: white;">Tutorial</button>
+                    </p>
+                </div>
+
+                <div class="rounded-lg shadow-md p-4" style="background-color:#599DF8;">
+                    <h3 class="font-semibold mb-2">Turning Old Clothes into Bags</h3>
+                    <p class="text-gray-700">
+                        Give your old clothes a new life by turning them into stylish bags.
+                        <button type="button" class="text-darkgreen-500 hover:underline" data-toggle="modal" data-target="#clothesToBagsModal" style="color: white;""
+                        >Tutorial</button>
+                    </p>
+                </div>
+
+                <div class="rounded-lg shadow-md p-4" style="background-color:#599DF8;">
+                    <h3 class="font-semibold mb-2">Creative Packaging Reuse</h3>
+                    <p class="text-gray-700">
+                        Discover innovative ways to reuse packaging materials like glass jars and cardboard boxes.
+                        <button type="button" class="text-darkgreen-500 hover:underline" data-toggle="modal" data-target="#packagingReuseModal" style="color: white;">Tutorial</button>
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <section class="mb-8">
+            <h2 class="text-xl font-semibold mb-4">Monthly "Clean-Up Mombasa" Events</h2>
+            <p class="mb-4">Join our community efforts to keep Mombasa clean and beautiful. Sign up for the next event below:</p>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="font-semibold mb-2">Upcoming Clean-Up Event</h3>
+                <p class="text-gray-700 mb-2"><span class="font-bold">Date:</span> April 27th, 2025</p>
+                <p class="text-gray-700 mb-2"><span class="font-bold">Location:</span> Tudor Creek Area</p>
+                <p class="text-gray-700 mb-4">Help us make a difference! All volunteers are welcome.</p>
+                <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Sign Up</button>
+            </div>
+        </section>
+
+    </main>
+
+    <div class="modal fade" id="palletFurnitureModal" tabindex="-1" role="dialog" aria-labelledby="palletFurnitureModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="palletFurnitureModalTitle">DIY Pallet Furniture Tutorial</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Upcycling wooden pallets can transform discarded materials into functional and stylish furniture. Here's a basic guide:</p>
+                    <div class="tutorial-step">
+                        <h4>Step 1: Source and Prepare Pallets</h4>
+                        <p>Find clean, dry, and untreated pallets. Inspect them for nails, staples, or damage. Sand down rough surfaces and edges to prevent splinters.</p>
+                    </div>
+                    <div class="tutorial-step">
+                        <h4>Step 2: Design Your Furniture</h4>
+                        <p>Decide what you want to create (e.g., coffee table, bench, vertical garden). Sketch your design and plan your cuts if necessary.</p>
+                    </div>
+                    <div class="tutorial-step">
+                        <h4>Step 3: Cut and Assemble</h4>
+                        <p>If your design requires cutting, use appropriate tools (saw). Assemble the pallet pieces using screws, nails, or strong adhesive, depending on your project.</p>
+                    </div>
+                    <div class="tutorial-step">
+                        <h4>Step 4: Finish and Decorate</h4>
+                        <p>Paint, stain, or varnish your pallet furniture for protection and aesthetics. Add cushions, wheels, or other decorative elements to personalize your creation.</p>
+                    </div>
+                    <p>For more detailed tutorials and inspiration, search online for "DIY pallet furniture projects".</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="clothesToBagsModal" tabindex="-1" role="dialog" aria-labelledby="clothesToBagsModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="clothesToBagsModalTitle">Turning Old Clothes into Bags Tutorial</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Give your unwanted clothes a new purpose by upcycling them into unique bags. Here's a simple approach:</p>
+                    <div class="tutorial-step">
+                        <h4>Step 1: Choose Your Fabric</h4>
+                        <p>Select sturdy fabric from old jeans, t-shirts, skirts, or jackets. Consider the size and type of bag you want to make.</p>
+                    </div>
+                    <div class="tutorial-step">
+                        <h4>Step 2: Cut the Fabric</h4>
+                        <p>Cut the fabric into the desired shape and size for your bag. Remember to account for seams and handles.</p>
+                    </div>
+                    <div class="tutorial-step">
+                        <h4>Step 3: Sew the Bag</h4>
+                        <p>Sew the edges of the fabric together to form the main body of the bag. You can use a sewing machine or hand-stitch for this step.</p>
+                    </div>
+                    <div class="tutorial-step">
+                        <h4>Step 4: Add Handles or Straps</h4>
+                        <p>Create handles or straps from leftover fabric, belts, or other materials. Attach them securely to the bag.</p>
+                    </div>
+                    <div class="tutorial-step">
+                        <h4>Step 5: Personalize Your Bag</h4>
+                        <p>Add buttons, zippers, pockets, or other embellishments to customize your upcycled bag.</p>
+                    </div>
+                    <p>Numerous online tutorials offer detailed instructions for various bag styles made from old clothing. Search for "DIY bag from old clothes".</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="packagingReuseModal" tabindex="-1" role="dialog" aria-labelledby="packagingReuseModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="packagingReuseModalTitle">Creative Packaging Reuse Tutorial</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Transform everyday packaging into useful and decorative items with a little creativity:</p>
+                    <div class="tutorial-step">
+                        <h4>Step 1: Glass Jars</h4>
+                        <p>Clean glass jars thoroughly. Use them for storing spices, pantry staples, craft supplies, or as decorative vases. Paint them, wrap them with twine, or add labels for a stylish look.</p>
+                    </div>
+                    <div class="tutorial-step">
+                        <h4>Step 2: Cardboard Boxes</h4>
+                        <p>Cardboard boxes can be repurposed as drawer organizers, storage containers, or even as building blocks for kids. Decorate them with wrapping paper, fabric scraps, or paint.</p>
+                    </div>
+                    <div class="tutorial-step">
+                        <h4>Step 3: Plastic Bottles</h4>
+                        <p>Cut plastic bottles to create planters for small herbs or succulents. The bottom parts can also serve as small storage containers for stationery or other items.</p>
+                    </div>
+                    <div class="tutorial-step">
+                        <h4>Step 4: Fabric Scraps</h4>
+                        <p>Leftover fabric from packaging or old clothes can be used to make reusable shopping bags, cleaning cloths, or patches.</p>
+                    </div>
+                    <p>Explore online resources for "creative packaging upcycling ideas" to discover a wealth of projects.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+         aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Stylish Glass Jar Storage Tutorial</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="before-after-container">
+                    <img src="images/upcycle-glass-before.jpg" alt="Old Glass Jars">
+                    <img src="images/upcycle-glass-after.jpg" alt="Stylish Glass Jar Storage">
+                </div>
+                <div class="modal-body">
+                    <div class="tutorial-step">
+                        <h4>Step 1: Clean the Jars</h4>
+                        <p>Wash the glass jars thoroughly with soap and hot water. Remove any labels.</p>
+                    </div>
+                    <div class="tutorial-step">
+                        <h4>Step 2: Decorate the Jars</h4>
+                        <p>Get creative with decorations! You can paint them, wrap them with twine or lace, decoupage them, or use glass etching.</p>
+                    </div>
+                    <div class="tutorial-step">
+                        <h4>Step 3: Create Lids (Optional)</h4>
+                        <p>You can decorate the existing lids or create new ones from fabric or wood.</p>
+                    </div>
+                    <div class="tutorial-step">
+                        <h4>Step 4: Organize Your Items</h4>
+                        <p>Use your stylish glass jars to store anything from pantry staples to craft supplies.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-gray-300 py-4 text-center text-gray-700 mt-8">
+        <p>&copy; 2025 Mombasa Transition Housing Hub</p>
+    </footer>
+   
