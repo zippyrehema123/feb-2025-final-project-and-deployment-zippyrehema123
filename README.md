@@ -69,7 +69,7 @@ Click "Deploy Site".
 Access the Live Site
 Once deployed, your live website will be available at:
 
-👉 https://your-netlify-site-name.netlify.app
+👉 https://affordablehousehub.netlify.app/community
 
 ## 📝 Documentation & Future Enhancements
 Future Enhancements
